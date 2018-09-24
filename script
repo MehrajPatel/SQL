@@ -1,0 +1,36 @@
+sudo apt-get install apache2 -y
+sudo systemctl start apache2.service
+
+sudo apt-get install mysql-server -y
+
+sudo /usr/bin/mysql_secure_installation
+
+sudo apt-get install php -y
+
+sudo apt-get install -y php-{bcmath,bz2,intl,gd,mbstring,mcrypt,mysql,zip} && sudo apt-get install libapache2-mod-php  -y
+
+
+
+sudo systemctl enable apache2.service
+sudo systemctl enable mysql.service
+
+
+systemctl restart apache2.service
+
+
+______________________________________________________________________________________________________________________________
+
+http://hiteshchoudhary.com/injection/master.zip
+unzip master.zip
+sudo cp setup\ and\ less1/ /var/www/html/master
+rm master.zip
+cd master/
+mv ./* ../
+rm -r master/
+
+vi /var/www/html/master/sql-connections/db-creds.inc
+
+
+sql double query injection
+
+https://www.owasp.org/index.php/XSS_Filter_Evasion_Cheat_Sheet
