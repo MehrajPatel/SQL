@@ -1,0 +1,74 @@
+strings
+vignere
+sonic-cis
+
+crypto.interactive-maths.com
+unit-conversion.info/texttools
+wordplays.com/cryptogram
+
+binwalk  // -e for extract embedded files	
+
+crunch
+
+evilgrade
+
+dnsdumpster 
+
+sslstrip //to downgrade https to http. runs on port 10000
+//redirect by: iptables -t nat -A PREROUTING -p tcp	--destination-port 80 -j REDIRECT --to-port 10000
+
+tesseract // OCR
+steghide
+stegsolve
+jstego
+zsteg -a "iamgename"
+zbartools -> zbarimg // to read qr codes
+asciitohex.com
+nirsoft.net // get ip addresses used in paritcular country
+ipinfo.io/<ip> //get physical address by IP	
+
+fcrackzip -D -u -p rockyou.txt new.zip
+
+for i in {1..26}; do echo "string" | caesar $i; done    //decode caesar cipher
+
+import re
+h=open('filename.txt')
+c=h.read()
+h.close()
+print ''.join([chr(int(x)) for x in c.split()])    //get readable string from string of ascii codes
+
+"".decode('hex')    // get string fro hexs
+
+in case of ecrypted string try
+- To to read as base85
+- To read as malbolge
+f1=open('file1').read()
+f2=open('file2').read()
+
+message=[]
+for i in range(len(f1)):
+	if(f1[i]==f2[i]):
+	 message.append(f1[i])
+print ''.join(message)
+
+from pwd import *
+s= "string of values of different bases"
+s=s.replace(' b',' 0b')
+s=s.replace(' x',' 0x')
+s=s.replace(' o',' 0o)
+s=s.replace(' d',' ')
+s=s.replace(' ',',')
+s="["+s+']'
+
+print ''.join[chr(x) for x in safeeval.expr(s)]   //we have string which contains ascii codes in binary, octal, decimal and hexadecimal formate. we first converted those values to decimal and then character
+
+
+zbarimg 1.png | cut -d ":" -f2 | tac | tr -d "\n"  //read qr code of image 1.png get strings second half and reverse it then remove newline character
+
+strings "image name" | tail -n 1 | base64 -d  | rev | cut -d  " " -f1 | rev     \\get string from image and decode it
+
+convert imageName.png -scale output.png
+
+https://drive.google.com/drive/folders/0B9h6Z88xmpyKem1GMjdfZ3pxc2M
+
+https://drive.google.com/drive/folders/1k7kTasaUzWDIw9NG9D4Fxk7ss3mUicQJ

